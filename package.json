@@ -1,0 +1,20 @@
+{
+  "name": "timestamp",
+  "version": "1.0.0",
+  "description": "Timestamp microservice; takes either unix or natural language time stamp string and returns both unix and NL timestamps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "time",
+    "stamp",
+    "timestamp",
+    "unix"
+  ],
+  "author": "matt britt",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
