@@ -1,4 +1,10 @@
-div(style='align:center;')
+
+style
+    .red { color: red; }
+    
+body
+
+div
     h1 Free Code Camp API Projects
     p   This is a landing page for the FCC API Projects.  
     p   These APIs have been built by Matt Britt in order to satisfy the requirements for the Back End Developement Certificate.
@@ -6,6 +12,11 @@ div(style='align:center;')
     h3 Timestamp
     p   The timestamp API can be reached at '/timestamp/' + either a natural language date (e.g. 'January 25th, 1990') or a unix timestamp (e.g. 1450137600).
     p   #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/timestamp/July 4, 1976') https://fcc-api-projects-matthewlbritt.c9users.io/timestamp/July 4, 1976]
-    p   If a valid date is given, a json is returned with both the unix and natural language date:
-    p=timestamp
+    p   If a valid date is given, a jsonp is returned with both the unix and natural language date:
+    p(style='color:blue')=timestamp
     p  Otherwise both keys are null.
+    br
+    h3  whoami
+    p   The whoami API lives at #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/whoami/') /whoami/]
+    p   It does not accept any parameters and outputs a jsonp containing ip, language and os of the client:
+    p(style='color:red;')=whoami
