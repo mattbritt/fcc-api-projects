@@ -75,6 +75,20 @@ app.get('/little-url/:shortUrl', function(req, res){
    
 });
 
+app.get('/imagesearch/:imgQuery', function(req, res){
+//imagesearch microservice (returns image metadata from Google Image Search)
+
+var imageSearch = require('./imageSearch');
+imageSearch.doSearch(req, res);
+    
+});
+
+app.get('/latest/imagesearch/', function(req, res){
+//returns last 10 imagesearch queries
+
+    
+});
+
 
 
 app.listen(port);
