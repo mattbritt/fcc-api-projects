@@ -40,7 +40,10 @@ coll.findOne(
            }
            else{                                                //url already in db, return existing entry
               console.log('found newUrl in db');
-               res.jsonp(data);
+               res.jsonp({
+                            original_url: data.original_url,
+                            short_url: 'https://fcc-api-projects-matthewlbritt.c9users.io/little_url/' + data.short_url
+                        });
                res.end();
            }
             
@@ -103,7 +106,7 @@ coll.insert(insertJSON, function(err, data){
                else{
                    insertJSON = {               //update json to remove _id field that gets added on insert
                                     original_url: insertJSON.original_url,
-                                    short_url: insertJSON.short_url
+                                    short_url: 'https://fcc-api-projects-matthewlbritt.c9users.io/little-url/' + insertJSON.short_url
                                 };
                    
                     res.jsonp(insertJSON);

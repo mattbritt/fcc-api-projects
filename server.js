@@ -17,10 +17,21 @@ app.get('/', function(req, res){
     var whoami_ob = {"ipaddress":"24.155.221.251",
                     "language":"en-US",
                     "software":"Windows NT 10.0; Win64; x64"};
+                    
+//example json for little-url:
+    var littleUrl_ob = {
+                            original_url: 'http://www.google.com',
+                            short_url: 'https://fcc-api-projects-matthewlbritt.c9users.io/little-url/3'
+                        }
 
 
              
-   res.render('index',{timestamp:JSON.stringify(timestamp_ob),whoami:JSON.stringify(whoami_ob)}); 
+   res.render('index',
+        {   
+            timestamp: JSON.stringify( timestamp_ob ),
+            whoami: JSON.stringify( whoami_ob ),
+            littleUrlJson: JSON.stringify( littleUrl_ob )
+        }); 
     
 });
 

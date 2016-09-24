@@ -16,7 +16,18 @@ div
     p(style='color:blue')=timestamp
     p  Otherwise both keys are null.
     br
-    h3  whoami
+    h3  Whoami
     p   The whoami API lives at #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/whoami/') /whoami/]
     p   It does not accept any parameters and outputs a jsonp containing ip, language and os of the client:
     p(style='color:red;')=whoami
+    br
+    h3  Little-url
+    p   The little-url microservice takes in a shortened url and redirects to the longer, original url.
+    p   For example, #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/little-url/3') /little-url/3] will redirect to Google.
+    p   New urls can be added at /little-url/new/
+    p   Example: #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/little-url/new/http://aol.com') /little-url/new/http://aol.com] will add http://aol.com to the database.
+    p   Note: The http:// is required or an error will be returned.
+    p   When a new url is added the service will return a jsonp with the following format:
+    p(style='color:green;')=littleUrlJson
+    p   The short_url can be used to redirect to the original_url.
+    p   If a url already exists in the database, the existing short url will be returned in the jsonp.
