@@ -1,6 +1,5 @@
 var port = 8080;                                            //server port 8080
 
-
 var express = require('express');                           //setup express
 var app = express();            
 
@@ -43,6 +42,28 @@ app.get('/whoami/', function(req, res){
     
     res.end();
 });
+
+
+app.get('/little-url/new/:newUrl(*)', function(req, res){
+//little-url microservice (add new url)
+
+    var newUrl = req.params.newUrl; 
+    
+    var littleUrl = require('./little-url');
+    littleUrl.newUrl(res, newUrl);
+ 
+});
+
+app.get('/little-url/:shortUrl', function(req, res){
+//little-url microservice (redirect based on short irl)   
+
+    var shortUrl = req.params.shortUrl;
+
+    var littleUrl = require('./little-url');
+    littleUrl.getUrl(res, shortUrl);
+   
+});
+
 
 
 app.listen(port);
