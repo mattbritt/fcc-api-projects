@@ -31,3 +31,10 @@ div
     p(style='color:green;')=littleUrlJson
     p   The short_url can be used to redirect to the original_url.
     p   If a url already exists in the database, the existing short url will be returned in the jsonp.
+    br
+    h3  ImageSearch
+    p   This is the image search abstraction layer.  #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/imagesearch/lol%20cats%20funny?offset=23') /imageSearch/lol cats funny?offset=23] will search for 'lol cats funny'.
+    p   The ?offset= alllows for pagination through returned search results.  The returned results are in jsonp format:
+    p(style='color:blue;')=imageSearch
+    p   The last 10 searches can be viewed at #[a(href='https://fcc-api-projects-matthewlbritt.c9users.io/latest/imagesearch/') /latest/imagesearch/]:
+    p(style='color:red;')=imageSearchLatest

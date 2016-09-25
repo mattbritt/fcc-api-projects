@@ -22,15 +22,30 @@ app.get('/', function(req, res){
     var littleUrl_ob = {
                             original_url: 'http://www.google.com',
                             short_url: 'https://fcc-api-projects-matthewlbritt.c9users.io/little-url/3'
-                        }
+                        };
 
+//example json for imageSearch:
+    var imageSearch_ob = {
+                            url: "http://www.lolcats.com/images/u/07/22/lolcatsdotcomib5v9oe8urvsgmh0.jpg",
+                            snippet: "But...but.",
+                            thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQglV4aDos7gGBZjy24XaqKNyKWtwF4SuzQpedertobFUYqKMxKOndy5bk",
+                            context: "http://www.lolcats.com/page-3.html"
+                        };
+                        
+//example json for /latest/imageSearch/:
+    var imageSearchLatest_ob = {
+                                term: "lol cats funny",
+                                when: "2016-09-24T23:44:59.411Z"  
+                              };
 
              
    res.render('index',
         {   
             timestamp: JSON.stringify( timestamp_ob ),
             whoami: JSON.stringify( whoami_ob ),
-            littleUrlJson: JSON.stringify( littleUrl_ob )
+            littleUrlJson: JSON.stringify( littleUrl_ob ),
+            imageSearch: JSON.stringify( imageSearch_ob ),
+            imageSearchLatest: JSON.stringify( imageSearchLatest_ob )
         }); 
     
 });
