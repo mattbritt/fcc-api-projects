@@ -108,6 +108,30 @@ for(var i = 0; i < itemsJSON.length; i++){
 return retArray;
     
 }
+}
 
 
+exports.getLatest = function(req, res){
+//get latest image searches from mongo and return them in array form   
+
+mongo.connect(mongoUrl, function(err, db){
+   if(err) throw err;
+   
+   var coll = db.collection('imageSearch');
+   
+   coll.find({},
+            { _id: false, when: true, term: true},
+            {'sort': [['_id', 'desc']], limit: 10}
+       ).toArray(function(err, docs){
+           if(err) throw err;
+           
+          res.jsonp(docs);
+          res.end();
+          db.close();
+       });
+   
+  
+});
+    
+    
 }

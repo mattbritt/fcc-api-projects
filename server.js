@@ -86,6 +86,8 @@ imageSearch.doSearch(req, res);
 app.get('/latest/imagesearch/', function(req, res){
 //returns last 10 imagesearch queries
 
+var imageSearch = require('./imageSearch');
+imageSearch.getLatest(req, res);
     
 });
 
