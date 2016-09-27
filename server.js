@@ -37,6 +37,9 @@ app.get('/', function(req, res){
                                 term: "lol cats funny",
                                 when: "2016-09-24T23:44:59.411Z"  
                               };
+                              
+//example json for file-size:
+    var fileSize_ob = { size: 11010 };
 
              
    res.render('index',
@@ -45,7 +48,8 @@ app.get('/', function(req, res){
             whoami: JSON.stringify( whoami_ob ),
             littleUrlJson: JSON.stringify( littleUrl_ob ),
             imageSearch: JSON.stringify( imageSearch_ob ),
-            imageSearchLatest: JSON.stringify( imageSearchLatest_ob )
+            imageSearchLatest: JSON.stringify( imageSearchLatest_ob ),
+            fileSize: JSON.stringify( fileSize_ob )
         }); 
     
 });
