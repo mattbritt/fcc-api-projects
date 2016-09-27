@@ -107,6 +107,26 @@ imageSearch.getLatest(req, res);
 });
 
 
+app.get('/file-size/', function(req, res){
+// allows a file be uploaded and returns a json with the file size.
+
+//render fileSize.pug, the file sumbit page
+ res.render('fileSize');
+ 
+});
+
+//set up multer vars:
+var multer = require('multer');
+var upload = multer({ dest: './uploads/' });
+//var bodyParser = require('body-parser');
+//app.use(bodyParser.json());
+
+
+app.post('/file-size/', upload.single('upl'), function(req, res){
+//accept the file upload post    
+  var fileSize = require('./fileSize');
+  fileSize.fileSize(req, res);
+});
 
 app.listen(port);
 

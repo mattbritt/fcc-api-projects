@@ -1,0 +1,10 @@
+//- pug file to render the file submission page for the file-size microservice
+
+html
+    head
+        title File-Size File Upload
+    body
+        form(action='/file-size/', method='POST', enctype='multipart/form-data')
+            div
+                input(type='file',name='upl')
+                input(type='submit')
